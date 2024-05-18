@@ -1,0 +1,12 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	WHILE             3005
+//	SLEEP             3012
+//	QUIT              3015
+//	HELLO_STR         3016
+//	ENTER_STR         3031
+//	KBSRPtr           3040
+//	KBDRPtr           3041
+

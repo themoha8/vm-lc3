@@ -1,0 +1,24 @@
+.ORIG x3000                        ; this is the address in memory where the program will be loaded
+LEA R0, HELLO_STR                  ; load the address of the HELLO_STR string into R0
+PUTs                               ; output the string pointed to by R0 to the console
+HALT                               ; halt the program
+HELLO_STR .STRINGZ "Hello, World!" ; store this string here in the program
+.END                               ; mark the end of the file
+
+В двоичном виде:
+
+.text
+
+0011 0000 0000 0000 - 0x3000
+
+1110 0000 0000 0010 - LEA R0, HELLO_STR 
+1111 0000 0010 0010 - PUTs
+1111 0000 0010 0101 - HALT
+
+.data
+0048 0065 006c 006c
+006f 002c 0020 0077 
+006f 0072 006c 0064
+0021 000a 0000 
+
+Адрес (на строку) вычисляется относительно текущей инструкции, строка размещается после инструкции lea, относительный адрес будет +2 (у нас ячейки 16-битные).
